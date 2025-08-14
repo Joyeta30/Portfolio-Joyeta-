@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="./dist/output.css">
+  <script defer src="./assets/fontawesome/js/solid.js"></script>
+  <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+  <script>
+    window.onload = () => {
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+       const icon = document.getElementById("menu-icon");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        if (menu.classList.contains("hidden")) {
+        // Show hamburger icon
+        icon.innerHTML = `<path d="M4 6h16M4 12h16M4 18h16"/>`;
+      } else {
+        // Show close (X) icon
+        icon.innerHTML = `<line x1="18" y1="6" x2="6" y2="18" />
+                          <line x1="6" y1="6" x2="18" y2="18" />`;
+      }
+
+      });
+    };
+  </script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-gradient-to-r from-rose-500 to-pink-500 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        
+        <!-- Logo -->
+        <div class="flex items-end gap-2">
+          <!-- <img src="./assets/images/logo-inverted.png" alt="Logo" width="40"> -->
+          <span class="text-2xl font-bold text-white">JOYETA:<span class="text-sky-900">SENAPATI</span></span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#hero" class="text-pink-200 font-semibold hover:text-white transition">Home</a>
+          <a href="#about" class="text-pink-200 font-semibold hover:text-white transition">About</a>
+          <a href="#skills" class="text-pink-200 font-semibold hover:text-white transition">Skill</a>
+          <a href="#experience" class="text-pink-200 font-semibold hover:text-white transition">Experience</a>
+          <a href="#certificates" class="text-pink-200 font-semibold hover:text-white transition">Certificate</a>
+        </div>
+
+        <!-- Mobile Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-white focus:outline-none">
+  <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
+       viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6h16M4 12h16M4 18h16"/>
+  </svg>
+</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-r from-rose-500 to-pink-500 px-4 py-2 space-y-2">
+      <a href="#hero" class="block text-pink-200 font-semibold hover:text-white transition">Home</a>
+      <a href="#about" class="block text-pink-200 font-semibold hover:text-white transition">About</a>
+      <a href="#skills" class="block text-pink-200 font-semibold hover:text-white transition">Skill</a>
+      <a href="#experience" class="block text-pink-200 font-semibold hover:text-white transition">Experience</a>
+      <a href="#certificates" class="block text-pink-200 font-semibold hover:text-white transition">Certificate</a>
+    </div>
+  </nav>
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section id="hero" 
+         class="relative bg-gray-900 text-white overflow-hidden">
+  
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="/images/bgpic.jpg" 
+         alt="Coding Background" 
+         class="w-full h-full object-cover filter blur-sm opacity-40">
+  </div>
+
+  <!-- Dark Overlay -->
+  <!-- <div class="absolute inset-0 bg-black bg-opacity-50"></div> -->
+
+  <!-- Hero Content -->
+  <div class="relative container mx-auto flex flex-col-reverse items-center px-6 py-12 lg:flex-row lg:py-24">
+    
+    <!-- Text Content -->
+    <div class="flex flex-col space-y-6 mb-12 lg:mt-8 lg:w-1/2">
+      <h1 class="text-5xl font-bold text-center lg:text-6xl lg:text-left">
+        JOYETA SENAPATI <br class="hidden lg:block"/> 
+        <span class="text-rose-500">A SOFTWARE DEVELOPER</span>
+      </h1>
+      <p class="text-lg text-center text-gray-300 lg:text-left">
+        A passionate <span class="font-semibold">Frontend Developer</span> building beautiful and functional user interfaces.
+      </p>
+      <div class="mx-auto lg:mx-0">
+        <a href="/images/JOYETA_SENAPAI_CV.pdf" 
+         download="JOYETA_SENAPAI_CV.pdf"
+           class="py-4 px-8 text-lg font-bold text-white bg-rose-500 rounded-full hover:bg-rose-700 transition">
+          DOWNLOAD CV
+        </a>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="mb-12 mx-auto lg:mb-0 lg:w-1/2 flex justify-center">
+      <img src="/images/sumi.jpeg" alt="Profile Photo" 
+           class="rounded-lg shadow-lg w-80 lg:w-[400px] ">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- About / Features Section -->
+<section id="about" class="relative py-20">
+  <!-- Section Title -->
+  <div class="relative z-10 text-center mb-16">
+    <h2 class="text-4xl font-extrabold text-white drop-shadow-lg">About Me</h2>
+    <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
+      A passionate web developer with a love for creating clean, modern, and user-friendly experiences.
+    </p>
+  </div>
+
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="/images/bgpic.jpg" 
+         alt="Coding Background"
+         class="w-full h-full object-cover filter blur-sm opacity-50">
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="relative container flex flex-col items-start px-6 mx-auto md:flex-row md:space-x-7">
+    
+    <!-- Horizontal Line for Desktop -->
+    <div class="hidden absolute top-24 w-10/12 left-16 h-3 bg-rose-100 md:block"></div>
+    
+    <!-- Vertical Line for Mobile -->
+    <div class="absolute w-2 left-1/2 h-full -ml-1 bg-rose-200 md:hidden"></div>
+
+    <!-- Box 1 -->
+    <div class="relative flex flex-col p-6 space-y-6 bg-rose-200/100 rounded-lg shadow-lg md:w-1/3">
+      <div class="absolute -ml-10 left-1/2 -top-10 md:left-16">
+        <div class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-sky-900">
+          <img src="/images/OIP-removebg-preview.png" alt="Frontend Icon">
+        </div>
+      </div>
+      <h5 class="pt-6 text-xl font-bold text-center capitalize md:text-left">
+        Frontend Development
+      </h5>
+      <p class="text-center text-gray-600 md:text-left">
+        Skilled in HTML, CSS, JavaScript, and modern frameworks like React and Tailwind CSS to create interactive, responsive designs.
+      </p>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="relative flex flex-col mt-24 p-6 space-y-6 bg-rose-300/100 rounded-lg shadow-lg md:mt-8 md:w-1/3">
+      <div class="absolute -ml-10 left-1/2 -top-10 md:left-16">
+        <div class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-sky-900">
+          <img src="/images/backend-development-line-gradient-circle-background-icon-vector-removebg-preview.png" alt="Backend Icon">
+        </div>
+      </div>
+      <h5 class="pt-6 text-xl font-bold text-center capitalize md:text-left">
+        Backend Knowledge
+      </h5>
+      <p class="text-center text-gray-700 md:text-left">
+        Familiar with Node.js, Express, and databases like MongoDB to handle data and server-side logic efficiently.
+      </p>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="relative flex flex-col mt-24 p-6 space-y-6 bg-rose-400/100 rounded-lg shadow-lg md:mt-16 md:w-1/3">
+      <div class="absolute -ml-10 left-1/2 -top-10 md:left-16">
+        <div class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-sky-900">
+          <img src="/images/th-removebg-preview.png" alt="UI Icon">
+        </div>
+      </div>
+      <h5 class="pt-6 text-xl font-bold text-center capitalize md:text-left">
+  UI/UX Design
+</h5>
+<p class="text-center text-gray-800 md:text-left">
+  Focused on creating intuitive and visually appealing user experiences with attention to detail and accessibility. Experienced with design tools like <strong>Figma</strong> and <strong>Canva</strong>.
+</p>
+
+    </div>
+
+  </div>
+</section>
+<section id="experience" class="relative py-12 bg-gray-900 text-white">
+  <h2 class="text-3xl font-bold text-center mb-12">Experience & Internships</h2>
+
+
+  <!-- Timeline line -->
+  <div class="absolute left-1/2 top-38 -ml-[8px] h-190 w-4 rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900">
+    <div class="sticky top-1/2">
+      <div class="size-4 relative">
+        <div class="size-4 absolute animate-ping rounded-full bg-pink-500 opacity-75"></div>
+        <div class="size-4 relative rounded-full bg-rose-500"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline items -->
+  <div class="grid grid-cols-2 gap-8 relative z-10">
+
+    <!-- Techno Web Development -->
+    <div>
+      <h4 class="my-4  rounded-lg bg-zinc-800 p-2">09/2024-02/2025</h4>
+    </div>
+    <div></div>
+    <div class="text-right">
+      <div class="font-bold">ATechnology Web Development</div>
+      <div class="text-zinc-400">Web Development Internship</div>
+    </div>
+    <div></div>
+
+    <!-- Shanvia Tech Solutions -->
+    <div></div>
+     <div>
+      <h4 class="my-4 rounded-lg bg-zinc-800 p-2">04/2025 - 06/2025</h4>
+    </div>
+    <div class="text-right">
+      <div class="font-bold">Shanvia Tech Solutions Pvt Ltd</div>
+      <div class="text-zinc-400">Frontend Developer Internship</div>
+      <div class="text-sm text-gray-400">04/2025 - 06/2025</div>
+    </div>
+   
+    <div></div>
+
+    <!-- Intelbyte -->
+     <div>
+      <h4 class="my-4 rounded-lg bg-zinc-800 p-2">06/2025 - 07/2025</h4>
+    </div>
+    <div></div>
+    <div></div>
+     <div class="text-left">
+      <div class="font-bold">Intelbyte Pvt Ltd</div>
+      <div class="text-zinc-400">Full Stack Developer Internship</div>
+      <div class="text-sm text-gray-400">06/2025 - 07/2025</div>
+    </div>
+   
+
+    <!-- PCS Global -->
+      <div></div>
+    <div>
+      <h4 class="my-4 rounded-lg bg-zinc-800 p-2">07/2025 - Present</h4>
+    </div>
+   
+    <div class="text-right">
+      <div class="font-bold">PCS Global Pvt Ltd</div>
+      <div class="text-zinc-400">Software Trainee</div>
+    </div>
+   
+  </div>
+</section>
+
+<section id="certificates" class="py-10 px-3 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-8">Certificates & Achievements</h2>
+
+  <div
+    id="certificate-carousel"
+    class="mt-0 flex w-full h-full flex-1 snap-x gap-6 overflow-x-auto scroll-smooth pb-5 pt-5 pl-5"
+  >
+    <!-- Certificate 1 -->
+    <div class="min-w-[80%]  md:min-w-[40%] flex flex-col">
+      <div
+        style="background-image: url('/images/c-1.jpeg')"
+        class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20 transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:shadow-black/10"
+      ></div>
+      <h5 class="mt-3 font-semibold">Web Development</h5>
+      <h6 class="text-gray-600">Issued by Euphoria</h6>
+      <p class="text-sm text-gray-500">Completion Certificate</p>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="min-w-[80%] md:min-w-[40%] flex flex-col">
+      <div
+        style="background-image: url('/images/c-2.jpg')"
+        class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20 transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:shadow-black/30"
+      ></div>
+      <h5 class="mt-3 font-semibold">LIVE PROJECT</h5>
+      <h6 class="text-gray-600">A Technologies</h6>
+      <p class="text-sm text-gray-500">Internship Certificate</p>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="min-w-[80%]  md:min-w-[40%] flex flex-col">
+      <div
+        style="background-image: url('/images/UC-da7a101b-3c5d-4df9-bbb8-627a8fcec409.jpg')"
+        class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20 transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:shadow-black/30"
+      ></div>
+      <h5 class="mt-3 font-semibold">Ionic 8+: Build Food Delivery App from Beginner to Advanced</h5>
+      <h6 class="text-gray-600">Udemy</h6>
+      <p class="text-sm text-gray-500">Internship Certificate</p>
+    </div>
+
+    <!-- Certificate 4 -->
+    <div class="min-w-[80%] md:min-w-[40%] flex flex-col">
+      <div
+        style="background-image: url('images/Getting_Started_with_Enterprise_grade_AI_Badge20240710-8-tvas7_page-0001.jpg')"
+        class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20 transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:shadow-black/30"
+      ></div>
+      <h5 class="mt-3 font-semibold">Getting_Started_with_Enterprise_grade_AI</h5>
+      <h6 class="text-gray-600">IBM</h6>
+      <p class="text-sm text-gray-500">Training Certificate</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="links" class="py-10 px-5 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center  text-black mb-8">Explore <span class="text-3xl font-bold text-rose-600">
+    My Work & Profiles
+  </span></h2>
+
+  <!-- Website -->
+  <div
+    class="flex flex-col items-center justify-between w-full p-6 mb-4 bg-rose-100 rounded-lg shadow-md md:flex-row filter "
+  >
+    <p class="font-bold text-center text-gray-800 md:text-left">
+     A profesional Website(intelbyte)
+    </p>
+    <div
+      class="flex flex-col items-center justify-end flex-1 space-y-2 md:flex-row md:space-y-0 md:space-x-4"
+    >
+      <a
+        href=" https://intelbyte.in"
+        target="_blank"
+        class="font-bold text-rose-500 hover:underline"
+      >
+        https://intelbyte.in
+      </a>
+      <button
+        onclick="navigator.clipboard.writeText(' https://intelbyte.in')"
+        class="p-2 px-6 text-white bg-rose-500 rounded-lg hover:opacity-80 focus:outline-none"
+      >
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- LinkedIn -->
+  <div
+    class="flex flex-col items-center justify-between w-full p-6 mb-4 bg-pink-200 rounded-lg shadow-md md:flex-row"
+  >
+    <p class="font-bold text-center text-gray-800 md:text-left">
+      LinkedIn
+    </p>
+    <div
+      class="flex flex-col items-center justify-end flex-1 space-y-2 md:flex-row md:space-y-0 md:space-x-4"
+    >
+      <a
+        href="https://www.linkedin.com/in/joyeta-senapati-401b4a290/"
+        target="_blank"
+        class="font-bold text-rose-600 hover:underline"
+      >
+        https://www.linkedin.com/in/joyeta-senapati-401b4a290/
+      </a>
+      <button
+        onclick="navigator.clipboard.writeText('https://www.linkedin.com/in/joyeta-senapati-401b4a290/')"
+        class="p-2 px-6 text-white bg-rose-600 rounded-lg hover:opacity-80 focus:outline-none"
+      >
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- GitHub -->
+  <div
+    class="flex flex-col items-center justify-between w-full p-6 bg-pink-300 rounded-lg shadow-md md:flex-row"
+  >
+    <p class="font-bold text-center text-gray-800 md:text-left">
+      GitHub
+    </p>
+    <div
+      class="flex flex-col items-center justify-end flex-1 space-y-2 md:flex-row md:space-y-0 md:space-x-4"
+    >
+      <a
+        href="https://github.com/Joyeta30"
+        target="_blank"
+        class="font-bold text-rose-700 hover:underline"
+      >
+        https://github.com/Joyeta30
+      </a>
+      <button
+        onclick="navigator.clipboard.writeText('https://github.com/Joyeta30')"
+        class="p-2 px-6 text-white bg-rose-700 rounded-lg hover:opacity-80 focus:outline-none"
+      >
+        Copy
+      </button>
+    </div>
+  </div>
+</section>
+<footer style="background:#222; color:#fff; padding:30px 0; text-align:center;">
+    <div style="max-width:800px; margin:auto; padding:0 20px;">
+        <!-- Contact Information -->
+        <h3>Contact Me</h3>
+        <p>📞 9641636751 | 📧 <a href="mailto:joyeta2002s@gmail.com" style="color:rgb(241, 93, 93);">joyeta2002s@gmail.com</a></p>
+        
+        
+
+        <p style="margin-top:20px; font-size:14px;">© 2025 Joyeta Senapati</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
